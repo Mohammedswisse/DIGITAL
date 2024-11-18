@@ -1,0 +1,1275 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+    background-color: #f4f4f4;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9b233;
+    padding: 10px 20px;
+    position: relative;
+}
+
+/* تنسيق اللوجو */
+.logo img {
+    max-width: 150px; /* تحديد أقصى عرض للوجو */
+    height: auto; /* الحفاظ على نسبة العرض والارتفاع */
+    display: block; /* إزالة المسافة السفلية إذا كانت الصورة تحتوي على سطر فارغ */
+    margin: 0 auto; /* لتوسيط الصورة داخل العنصر */
+}
+
+.nav-menu {
+    display: flex;
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 10px;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.actions .btn {
+    background-color: #fff;
+    color: #f9b233;
+    padding: 5px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .logo {
+        order: 2;
+        text-align: center;
+        flex-grow: 1;
+        height: 150px;
+    }
+
+
+    .logo img {
+        order: 2;
+        text-align: center;
+        flex-grow: 1;
+        height: 150px;
+    }
+
+    .nav-menu {
+        order: 1;
+        display: none; /* Hidden by default */
+        flex-direction: column;
+        width: 100%;
+        background-color: #f9b233;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        padding: 10px 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+    }
+
+    .nav-menu.show {
+        display: flex; /* Show the menu as a flex container */
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .nav-menu ul li {
+        width: 100%;
+    }
+
+    .nav-menu ul li a {
+        display: block;
+        width: 80%;
+        padding: 10px 20px;
+    }
+
+    .actions {
+        order: 3;
+        margin-top: 10px;
+    }
+}
+
+/* التنسيق للقسم الذي تريد محاذاته */
+.custom-section {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* أقصى اليمين في الشاشات الكبيرة */
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to right, #eef2ff, #ffffff);
+}
+
+/* لتوسيط العناصر في الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .custom-section {
+        justify-content: center; /* في الشاشات الصغيرة يكون في المنتصف */
+        text-align: center; /* لجعل النص في المنتصف */
+    }
+
+    .custom-image, .custom-text {
+        width: 100%;
+    }
+
+    .custom-image {
+        margin-bottom: 20px;
+    }
+}
+
+.custom-image {
+    flex: 1;
+    padding: 10px;
+}
+
+.custom-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.custom-text {
+    flex: 1.5;
+    padding: 10px;
+    text-align: right;
+}
+
+.custom-text h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.custom-text p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.custom-btn {
+    display: inline-block;
+    background-color: #f9b233;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.custom-btn:hover {
+    background-color: #e69c20;
+}
+
+/* التنسيق للمحتوى */
+.form-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.form-toggle {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.form-toggle button {
+    width: 48%;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.form-toggle button.active {
+    background-color: #f9b233; /* اللون البرتقالي */
+    color: white;
+}
+
+.form-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-content h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-content input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-content a {
+    text-align: right;
+    color: #f9b233; /* اللون البرتقالي */
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+
+.form-content .submit-btn {
+    background-color: #f9b233; /* اللون البرتقالي */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form-content p {
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.card {
+  overflow: visible;
+  width: 190px;
+  height: 254px;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 300ms;
+  box-shadow: 0px 0px 10px 1px #000000ee;
+  border-radius: 5px;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap; /* ترتيب البطاقات بشكل مرن */
+    justify-content: center; /* توزيع البطاقات في منتصف العرض */
+    align-items: center; /* محاذاة البطاقات في المنتصف عموديًا */
+    gap: 20px; /* المسافة بين البطاقات */
+}
+  
+
+.front, .back {
+  background-color: #151515;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.back {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.back::before {
+  position: absolute;
+  content: ' ';
+  display: block;
+  width: 160px;
+  height: 160%;
+  background: linear-gradient(90deg, transparent, #ff9966, #ff9966, #ff9966, #ff9966, transparent);
+  animation: rotation_481 5000ms infinite linear;
+}
+
+.back-content {
+  position: absolute;
+  width: 99%;
+  height: 99%;
+  background-color: #151515;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.card:hover .content {
+  transform: rotateY(180deg);
+}
+
+@keyframes rotation_481 {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  0% {
+    transform: rotateZ(360deg);
+  }
+}
+
+.front {
+  transform: rotateY(180deg);
+  color: white;
+}
+
+.front .front-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.front-content .badge {
+  background-color: #00000055;
+  padding: 2px 10px;
+  border-radius: 10px;
+  backdrop-filter: blur(2px);
+  width: fit-content;
+}
+
+.description {
+  box-shadow: 0px 0px 10px 5px #00000088;
+  width: 100%;
+  padding: 10px;
+  background-color: #00000099;
+  backdrop-filter: blur(5px);
+  border-radius: 5px;
+}
+
+.title {
+  font-size: 11px;
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title p {
+  width: 50%;
+}
+
+.card-footer {
+  color: #ffffff88;
+  margin-top: 5px;
+  font-size: 8px;
+}
+
+.front .img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: #ffbb66;
+  position: relative;
+  filter: blur(15px);
+  animation: floating 2600ms infinite linear;
+}
+
+#bottom {
+  background-color: #ff8866;
+  left: 50px;
+  top: 0px;
+  width: 150px;
+  height: 150px;
+  animation-delay: -800ms;
+}
+
+#right {
+  background-color: #ff2233;
+  left: 160px;
+  top: -80px;
+  width: 30px;
+  height: 30px;
+  animation-delay: -1800ms;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* التصميم العام */
+.front-content {
+    display: flex;
+    justify-content: center; /* توسيط العنصر أفقيًا */
+    align-items: center;     /* توسيط العنصر عموديًا */
+    height: 100vh; /* أخذ كامل ارتفاع الشاشة (اختياري إذا كنت تريد أن يكون الكارد بحجم الشاشة) */
+    text-align: center;
+    padding: 10px;
+}
+
+.description {
+    display: flex;
+    justify-content: center; /* توسيط المحتوى أفقيًا */
+    flex-direction: column;   /* ترتيب المحتوى عموديًا */
+    align-items: center;      /* توسيط العناصر عموديًا */
+}
+
+#startBtn {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #ddad81;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+#startBtn:hover {
+    background-color: #634647;
+}
+
+/* استعلامات إعلامية لعرض الزر بشكل مناسب على الشاشات الصغيرة */
+@media (max-width: 768px) {
+    #startBtn {
+        width: 80%; /* جعل الزر يستفيد من عرض الشاشة في الشاشات الصغيرة */
+        font-size: 18px;
+        padding: 15px;
+    }
+}
+
+
+/* استعلامات إعلامية للشاشات الصغيرة جدًا (أقل من 480px) */
+@media (max-width: 480px) {
+    #startBtn {
+        width: 90%; /* زيادة عرض الزر ليشمل 90% من عرض الشاشة */
+        font-size: 20px;
+        padding: 20px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+/* نافذة المنبثقة */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 11;
+    padding: 20px;
+    text-align: center;
+}
+
+/* أزرار */
+.btn {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #ddad81;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #634647;
+}
+
+
+
+
+
+
+
+
+
+.overlay2 {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+/* نافذة المنبثقة */
+.popup2 {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 11;
+    padding: 20px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container2 {
+    overflow: auto;
+    display: flex;
+    scroll-snap-type: x mandatory;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  .card2 {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 1rem;
+    width: 100%;
+  }
+  
+  .container2:hover > :not(:hover) {
+    opacity: 0.2;
+  }
+  
+  .title2 {
+    width: 100%;
+    display: inline-block;
+    word-break: break-all;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    margin: 1rem auto;
+  }
+
+
+
+  /* تظليل الخلفية */
+  #overlay4 {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+
+  /* نافذة الخريطة */
+  #mapPopup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+  }
+
+  #mapPopup iframe {
+    width: 600px;
+    height: 450px;
+    border: none;
+  }
+
+  /* زر لإغلاق النافذة */
+  .closeBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: #fff;
+    background-color: #f44336;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  /* زر العرض */
+  .btn {
+    padding: 10px 20px;
+    background-color: #20c997;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+
+  .btn:hover {
+    background-color: #17a589;
+  }
+
+
+
+  .overlay3 {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
+/* نافذة المنبثقة */
+.popup3 {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 11;
+    padding: 20px;
+    text-align: center;
+}
+
+
+
+
+
+
+  .container3{
+    overflow: auto;
+    display: flex;
+    scroll-snap-type: x mandatory;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  .card3 {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 1rem;
+    width: 100%;
+  }
+  
+  .container3:hover > :not(:hover) {
+    opacity: 0.2;
+  }
+  
+  .title3 {
+    width: 100%;
+    display: inline-block;
+    word-break: break-all;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    margin: 1rem auto;
+  }
+
+
+
+
+
+
+
+
+
+
+
+  .container {
+  background: #f8f9fd;
+  background: linear-gradient(
+    0deg,
+    rgb(255, 255, 255) 0%,
+    rgb(244, 247, 251) 100%
+  );
+  border-radius: 40px;
+  padding: 25px 35px;
+  border: 5px solid rgb(255, 255, 255);
+  box-shadow: rgba(232, 160, 4, 0.836) 0px 30px 30px -20px;
+  margin: 20px;
+}
+
+.heading {
+  text-align: center;
+  font-weight: 900;
+  font-size: 30px;
+  color: rgb(231, 120, 9);
+}
+
+.form {
+  margin-top: 20px;
+}
+
+.form .input {
+  width: 100%;
+  background: white;
+  border: none;
+  padding: 15px 5px;
+  border-radius: 20px;
+  margin-top: 15px;
+  box-shadow: #dc8504 0px 5px 5px -5px;
+  border-inline: 2px solid transparent;
+}
+
+.form .input::-moz-placeholder {
+  color: rgb(170, 170, 170);
+  text-align: center;
+}
+
+.form .input::placeholder {
+  color: rgb(170, 170, 170);
+  text-align: right;
+
+}
+
+.form .input:focus {
+  outline: none;
+  border-inline: 2px solid #e2af06;
+}
+
+.form .forgot-password {
+  display: block;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.form .forgot-password a {
+  font-size: 11px;
+  color: #0099ff;
+  text-decoration: none;
+}
+
+.form .login-button {
+  display: block;
+  width: 100%;
+  font-weight: bold;
+  background: linear-gradient(
+    45deg,
+    rgb(223, 143, 6) 0%,
+    rgb(214, 200, 11) 100%
+  );
+  color: white;
+  padding-block: 15px;
+  margin: 20px auto;
+  border-radius: 20px;
+  box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 20px 10px -15px;
+  border: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.form .login-button:hover {
+  transform: scale(1.03);
+  box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 23px 10px -20px;
+}
+
+.form .login-button:active {
+  transform: scale(0.95);
+  box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 15px 10px -10px;
+}
+
+.social-account-container {
+  margin-top: 25px;
+}
+
+.social-account-container .title {
+  display: block;
+  text-align: center;
+  font-size: 10px;
+  color: rgb(170, 170, 170);
+}
+
+.social-account-container .social-accounts {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 5px;
+}
+
+.social-account-container .social-accounts .social-button {
+  background: linear-gradient(45deg, rgb(0, 0, 0) 0%, rgb(112, 112, 112) 100%);
+  border: 5px solid white;
+  padding: 5px;
+  border-radius: 50%;
+  width: 40px;
+  aspect-ratio: 1;
+  display: grid;
+  place-content: center;
+  box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 12px 10px -8px;
+  transition: all 0.2s ease-in-out;
+}
+
+.social-account-container .social-accounts .social-button .svg {
+  fill: white;
+  margin: auto;
+}
+
+.social-account-container .social-accounts .social-button:hover {
+  transform: scale(1.2);
+}
+
+.social-account-container .social-accounts .social-button:active {
+  transform: scale(0.9);
+}
+
+.agreement {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.agreement a {
+  text-decoration: none;
+  color: #0099ff;
+  font-size: 9px;
+}
+
+
+
+
+
+.footer{
+    background:#000;
+    padding:30px 0px;
+    font-family: 'Play', sans-serif;
+    text-align:center;
+    }
+    
+    .footer .row{
+    width:100%;
+    margin:1% 0%;
+    padding:0.6% 0%;
+    color:rgb(251, 251, 251);
+    font-size:0.8em;
+    }
+    
+    .footer .row a{
+    text-decoration:none;
+    color:rgb(230, 152, 7);
+    transition:0.5s;
+    }
+    
+    .footer .row a:hover{
+    color:rgb(252, 251, 250);
+    }
+    
+    .footer .row ul{
+    width:100%;
+    }
+    
+    .footer .row ul li{
+    display:inline-block;
+    margin:0px 30px;
+    }
+    
+    .footer .row a i{
+    font-size:2em;
+    margin:0% 1%;
+    }
+    
+    @media (max-width:720px){
+    .footer{
+    text-align:left;
+    padding:5%;
+    }
+    .footer .row ul li{
+    display:block;
+    margin:10px 0px;
+    text-align:left;
+    }
+    .footer .row a i{
+    margin:0% 3%;
+    }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* From Uiverse.io by VashonG */ 
+.card {
+  position: relative;
+  height: 300px;
+  width: 230px;
+}
+.card:nth-child(2) {
+  filter: hue-rotate(300deg) brightness(1.3);
+}
+.card:nth-child(3) {
+  filter: hue-rotate(200deg) brightness(1.5);
+}
+.card:nth-child(4) {
+  filter: hue-rotate(60deg) brightness(3);
+}
+.card .boxshadow {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border: 1px solid rgb(232, 175, 17);
+  transform: scale(0.8);
+  box-shadow: rgb(232, 175, 17);
+  transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+.card .main {
+  width: 230px;
+  height: 300px;
+  overflow: hidden;
+  background: rgb(0, 255, 149);
+  background: linear-gradient(
+    0deg,
+    #3e0000 0%,
+    rgb(232, 175, 17),
+    #3e0000 100%
+  );
+  position: relative;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 40px,
+    100% calc(100% - 40px),
+    calc(100% - 40px) 100%,
+    40px 100%,
+    0 calc(100% - 40px)
+  );
+  box-shadow: rgb(0, 132, 255) 0px 7px 29px 0px;
+  transition: all 0.3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+.card .main .top {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 0px;
+  height: 0px;
+  z-index: 2;
+  border-top: 115px solid black;
+  border-left: 115px solid transparent;
+  border-right: 115px solid transparent;
+  transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+.card .main .side {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  transform: translateX(-50%);
+  height: 101%;
+  background: black;
+  clip-path: polygon(0% 0%, 50% 0, 95% 45%, 100% 100%, 0% 100%);
+  transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 1s;
+}
+.card .main .left {
+  left: 0;
+}
+.card .main .right {
+  right: 0;
+  transform: translateX(50%) scale(-1, 1);
+}
+.card .main .title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 90px;
+  font-weight: bold;
+  font-size: 25px;
+  opacity: 0;
+  z-index: -1;
+  color: #fff;
+  transition: all 0.2s ease-out 0s;
+}
+.card .main .button-container {
+  position: absolute;
+  bottom: 10px;
+  left: 65%;
+  transform: translateX(-50%);
+}
+.card .main .button-container .button {
+  position: absolute;
+  transform: translateX(-50%);
+  padding: 5px 10px;
+  clip-path: polygon(0 0, 100% 0, 81% 100%, 21% 100%);
+  background: black;
+  border: none;
+  color: white;
+  display: grid;
+  place-content: center;
+  transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+.card .main .button-container .button .svg {
+  width: 15px;
+  transition: all 0.2s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+.card .main .button-container .button:nth-child(1) {
+  bottom: 300px;
+  transition-delay: 0.4s;
+}
+.card .main .button-container .button:nth-child(2) {
+  bottom: 300px;
+  transition-delay: 0.6s;
+}
+.card .main .button-container .button:nth-child(3) {
+  bottom: 300px;
+  transition-delay: 0.8s;
+}
+.card .main .button-container .button:hover .svg {
+  transform: scale(1.2);
+}
+.card .main .button-container .button:active .svg {
+  transform: scale(0.7);
+}
+.card:hover .main {
+  transform: scale(1.1);
+}
+.card:hover .main .top {
+  top: -50px;
+}
+.card:hover .main .left {
+  left: -50px;
+  transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.1s;
+}
+.card:hover .main .right {
+  right: -50px;
+  transition: all 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.1s;
+}
+.card:hover .main .title {
+  opacity: 1;
+  transition: all 0.2s ease-out 1.3s;
+}
+.card:hover .main .button-container .button:nth-child(1) {
+  bottom: 80px;
+  transition-delay: 0.8s;
+}
+.card:hover .main .button-container .button:nth-child(2) {
+  bottom: 40px;
+  transition-delay: 0.6s;
+}
+.card:hover .main .button-container .button:nth-child(3) {
+  bottom: 0;
+  transition-delay: 0.4s;
+}

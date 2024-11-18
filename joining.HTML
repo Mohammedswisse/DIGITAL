@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <header class="navbar">
+        <div class="logo">
+            <img src="img/IMG_7759.png" alt="Descriptive Alt Text">
+        </div>
+        <button class="menu-toggle" aria-label="Toggle menu">
+            ☰
+        </button>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="#">الرئيسية</a></li>
+                <li><a href="#">خريطة المعرض</a></li>
+                <li><a href="#">الجدول الزمني</a></li>
+                <li><a href="#">الاسئلة الشائعة</a></li>
+                <li><a href="#">خدمة العملاء</a></li>
+            </ul>
+        </nav>
+        <div class="actions">
+            <a href="joining.HTML" class="btn">انضم إلينا</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="heading">انضمام</div>
+        <form id="joinForm" class="form" action="javascript:void(0);">
+            <!-- المعلومات الشخصية -->
+            <h3>1. المعلومات الشخصية:</h3>
+            <input
+                placeholder="الاسم الكامل"
+                id="fullName"
+                name="fullName"
+                type="text"
+                class="input"
+                required
+            />
+            <input
+                placeholder="تاريخ الميلاد"
+                id="birthDate"
+                name="birthDate"
+                type="date"
+                class="input"
+                required
+            />
+            <input
+                placeholder="العمر"
+                id="age"
+                name="age"
+                type="number"
+                class="input"
+                required
+            />
+            <input
+                placeholder="العنوان"
+                id="address"
+                name="address"
+                type="text"
+                class="input"
+                required
+            />
+            <input
+                placeholder="رقم الهاتف"
+                id="phone"
+                name="phone"
+                type="tel"
+                class="input"
+                required
+            />
+            <input
+                placeholder="البريد الإلكتروني (اختياري)"
+                id="email"
+                name="email"
+                type="email"
+                class="input"
+            />
+        
+            <!-- المستوى الدراسي -->
+            <h3>2. المستوى الدراسي:</h3>
+            <select id="educationLevel" name="educationLevel" class="input" required>
+                <option value="" disabled selected>المرحلة الدراسية</option>
+                <option value="ابتدائي">ابتدائي</option>
+                <option value="إعدادي">إعدادي</option>
+                <option value="ثانوي">ثانوي</option>
+                <option value="جامعي">جامعي</option>
+            </select>
+            <input
+                placeholder="اسم المدرسة أو الجامعة"
+                id="schoolOrUniversity"
+                name="schoolOrUniversity"
+                type="text"
+                class="input"
+                required
+            />
+        
+            <!-- الهوايات -->
+            <h3>3. الهوايات:</h3>
+            <label>
+                هل تحب الإلكترونيات أو البرمجة؟
+                <input type="radio" id="likeElectronicsYes" name="likeElectronics" value="نعم" required /> نعم
+                <input type="radio" id="likeElectronicsNo" name="likeElectronics" value="لا" /> لا
+            </label>
+            <h4>هواياتك المفضلة:</h4>
+            <label><input type="checkbox" name="hobbies" value="البرمجة" /> البرمجة</label>
+            <label><input type="checkbox" name="hobbies" value="التصميم" /> التصميم</label>
+            <label><input type="checkbox" name="hobbies" value="الروبوتات" /> الروبوتات</label>
+            <label><input type="checkbox" name="hobbies" value="الألعاب التعليمية" /> الألعاب التعليمية</label>
+            <label><input type="checkbox" name="hobbies" value="الرسم" /> الرسم</label>
+            <label><input type="checkbox" name="hobbies" value="أخرى" /> أخرى (حدد):</label>
+            <input
+                placeholder="حدد هواية أخرى"
+                id="otherHobby"
+                name="otherHobby"
+                type="text"
+                class="input"
+            />
+        
+            <!-- الأنشطة والخبرات السابقة -->
+            <h3>4. الأنشطة والخبرات السابقة:</h3>
+            <label>
+                هل سبق لك المشاركة في مشروع علمي أو تقني؟
+                <input type="radio" id="hasExperienceYes" name="hasExperience" value="نعم" required /> نعم
+                <input type="radio" id="hasExperienceNo" name="hasExperience" value="لا" /> لا
+            </label>
+            <input
+                placeholder="اسم المشروع أو النشاط"
+                id="projectName"
+                name="projectName"
+                type="text"
+                class="input"
+            />
+            <input
+                placeholder="أهم الأدوات أو البرامج المستخدمة"
+                id="toolsUsed"
+                name="toolsUsed"
+                type="text"
+                class="input"
+            />
+        
+            <!-- التوقعات والاهتمامات -->
+            <h3>5. التوقعات والاهتمامات:</h3>
+            <h4>ما الذي ترغب في تعلمه في النادي؟</h4>
+            <label><input type="checkbox" name="interests" value="البرمجة" /> البرمجة</label>
+            <label><input type="checkbox" name="interests" value="صناعة الروبوتات" /> صناعة الروبوتات</label>
+            <label><input type="checkbox" name="interests" value="حل المشكلات والتفكير الإبداعي" /> حل المشكلات والتفكير الإبداعي</label>
+            <label><input type="checkbox" name="interests" value="المشاركة في المسابقات" /> المشاركة في المسابقات</label>
+            <label><input type="checkbox" name="interests" value="أنشطة ممتعة ومبتكرة" /> أنشطة ممتعة ومبتكرة</label>
+        
+            <!-- خيارات إضافية -->
+            <h3>6. خيارات إضافية:</h3>
+            <h4>معرفتك الحالية بالبرمجة:</h4>
+            <label><input type="radio" name="codingLevel" value="مبتدئ" required /> مبتدئ</label>
+            <label><input type="radio" name="codingLevel" value="متوسط" /> متوسط</label>
+            <label><input type="radio" name="codingLevel" value="متقدم" /> متقدم</label>
+            <h4>التزامك بحضور الأنشطة وورش العمل:</h4>
+            <select id="commitmentLevel" name="commitmentLevel" class="input" required>
+                <option value="" disabled selected>اختر من 1 إلى 5</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        
+            <!-- موافقة ولي الأمر -->
+            <h3>7. موافقة ولي الأمر (لمن هم دون 18 سنة):</h3>
+            <input
+                placeholder="اسم ولي الأمر"
+                id="guardianName"
+                name="guardianName"
+                type="text"
+                class="input"
+            />
+            <input
+                placeholder="رقم الهاتف"
+                id="guardianPhone"
+                name="guardianPhone"
+                type="tel"
+                class="input"
+            />
+            <input
+                placeholder="توقيع ولي الأمر"
+                id="guardianSignature"
+                name="guardianSignature"
+                type="file"
+                class="input"
+            />
+         
+        
+            <!-- زر الإرسال -->
+            <input value="إرسال الطلب" type="submit" class="login-button" />
+        </form>
+        
+    </div>
+    <script type="text/javascript"src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script>
+        // تهيئة emailjs مع الـ User ID الخاص بك
+        emailjs.init("OAurADlvlVdedCpal");
+    
+        document.getElementById('joinForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+    
+   // الحصول على البيانات من النموذج
+const fullName = document.getElementById('fullName').value;
+const birthDate = document.getElementById('birthDate').value;
+const age = document.getElementById('age').value;
+const address = document.getElementById('address').value;
+const phone = document.getElementById('phone').value;
+const email = document.getElementById('email').value || 'غير محدد';
+const educationLevel = document.getElementById('educationLevel').value;
+const schoolOrUniversity = document.getElementById('schoolOrUniversity').value;
+const likeElectronics = document.querySelector('input[name="likeElectronics"]:checked').value;
+const hobbies = Array.from(document.querySelectorAll('input[name="hobbies"]:checked')).map(hobby => hobby.value).join(', ');
+const otherHobby = document.getElementById('otherHobby').value || 'لا يوجد';
+const hasExperience = document.querySelector('input[name="hasExperience"]:checked').value;
+const projectName = document.getElementById('projectName').value || 'لا يوجد';
+const toolsUsed = document.getElementById('toolsUsed').value || 'لا يوجد';
+const interests = Array.from(document.querySelectorAll('input[name="interests"]:checked')).map(interest => interest.value).join(', ');
+const codingLevel = document.querySelector('input[name="codingLevel"]:checked').value;
+const commitmentLevel = document.getElementById('commitmentLevel').value;
+const guardianName = document.getElementById('guardianName').value || 'غير محدد';
+const guardianPhone = document.getElementById('guardianPhone').value || 'غير محدد';
+
+// إعداد البيانات لإرسالها عبر EmailJS
+const templateParams = {
+    fullName: fullName,
+    birthDate: birthDate,
+    age: age,
+    address: address,
+    phone: phone,
+    email: email,
+    educationLevel: educationLevel,
+    schoolOrUniversity: schoolOrUniversity,
+    likeElectronics: likeElectronics,
+    hobbies: hobbies,
+    otherHobby: otherHobby,
+    hasExperience: hasExperience,
+    projectName: projectName,
+    toolsUsed: toolsUsed,
+    interests: interests,
+    codingLevel: codingLevel,
+    commitmentLevel: commitmentLevel,
+    guardianName: guardianName,
+    guardianPhone: guardianPhone
+};
+
+// عرض البيانات في وحدة التحكم للتأكد
+console.log(templateParams);
+
+// يمكنك الآن إرسال البيانات باستخدام EmailJS
+
+    
+            emailjs.send('service_2zj1598', 'template_ve7sb0b', templateParams)
+.then(function(response) {
+    console.log('Success:', response);
+            alert('تم إرسال البيانات بنجاح!');
+
+            // إعادة تعيين النموذج
+            document.getElementById('joinForm').reset();
+
+            // إعادة تحميل الصفحة
+            window.location.reload();
+        }, function(error) {
+            console.error('Error:', error);
+            alert('حدث خطأ أثناء الإرسال. تحقق من الإعدادات.');
+        });
+});
+    </script>
+    
+</html>

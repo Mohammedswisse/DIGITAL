@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Responsive Navbar</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <header class="navbar" >
+    <div class="logo">
+            <img src="img/IMG_7759.png" alt="Descriptive Alt Text">
+        </div>
+                <button class="menu-toggle" aria-label="Toggle menu">
+            ☰
+        </button>
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="#">الرئيسية</a></li>
+                <li><a href="#"> خريطة المعرض</a></li>
+                <li><a href="#">الجدول الزمني</a></li>
+                <li><a href="#">الاسئلة الشائعة</a></li>
+                <li><a href="#"> خدمة العملاء</a></li>
+            </ul>
+        </nav>
+        <div class="actions">
+            <a href="joining.HTML" class="btn">انضم إلينا</a>
+        </div>
+    </header>
+
+    
+    <!-- New Section -->
+   
+
+    <section class="custom-section">
+  <div class="card-container">
+  <!-- محتوى معلومات عنا -->
+  <div class="card">
+    <div class="content">
+        <div class="back">
+            <div class="back-content">
+              <img src="img/_123049.png" alt="Descriptive Alt Text"style="height: 80px;width: 80px;">
+        
+              <strong>   مؤسستنا </strong>
+          
+            </div>
+        </div>
+        <div class="front">
+            <div class="img">
+                <div class="circle"></div>
+                <div class="circle" id="right"></div>
+                <div class="circle" id="bottom"></div>
+            </div>
+            <div class="front-content">
+                <small class="badge">Pasta</small>
+                <div class="description">
+                    <div class="title">
+                        <button id="INFO" class="btn"> الاطلاع </button>
+                    </div>
+                    <p class="card-footer">
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- التظليم والنافذة المنبثقة خارج البطاقة -->
+<div id="overlay" class="overlay"></div>
+<div id="popup" class="popup">
+    <h2>معلومات عن المؤسسة</h2>
+      <p>نرحب بكم في نادي ديجيتال للروبوتات، الذي تأسس عام 2024، بهدف تعليم الشباب والأطفال أساسيات الإلكترونيات والبرمجة باستخدام. يتيح النادي للأعضاء من الشباب والأطفال فرصة استكشاف مجالات الابتكار واختراع حلول تكنولوجية لمشكلات معاصرة، مما يسهم في بناء جيل واعٍ وذكي.
+        ‎يُعتبر نادي ديجيتال للروبوتات رائدًا في هذا المجال، حيث يسعى إلى إنشاء مشاريع مبتكرة والمشاركة في المسابقات المحلية والدولية. نؤمن بأن الاستثمار في عقول الشباب والأطفال هو الطريق لبناء مستقبل مشرق، ونسعى لتوفير بيئة تعليمية مميزة تشجع على الإبداع والتفكير النقدي.</p>
+        <button class="btn" id="closeBtn">اغلاق</button>
+    </div>
+
+<script>
+    // فتح النافذة المنبثقة وتظليم الخلفية
+    document.getElementById('INFO').addEventListener('click', function() {
+        document.getElementById('overlay').style.display = 'block';
+        document.getElementById('popup').style.display = 'block';
+    });
+
+   // إغلاق النافذة المنبثقة وإزالة التظليم
+document.getElementById('closeBtn').addEventListener('click', function() {
+  document.getElementById('overlay').style.display = 'none';
+  document.getElementById('popup').style.display = 'none';
+});
+</script>
+                    
+ 
+
+    <!-- محتوى معلومات عنا -->
+    <div class="card">
+      <div class="content">
+          <div class="back">
+              <div class="back-content">
+                <img src="img/robot_128_44173.png" alt="Descriptive Alt Text"style="height: 80px;width: 80px;">
+          
+                <strong>  ربوتنا  </strong>
+            
+              </div>
+          </div>
+          <div class="front">
+              <div class="img">
+                  <div class="circle"></div>
+                  <div class="circle" id="right"></div>
+                  <div class="circle" id="bottom"></div>
+              </div>
+              <div class="front-content">
+                  <small class="badge">Pasta</small>
+                  <div class="description">
+                      <div class="title">
+                          <button id="INFO2" class="btn"> الاطلاع </button>
+                      </div>
+                      <p class="card-footer">
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- التظليم والنافذة المنبثقة خارج البطاقة -->
+  <div id="overlay3" class="overlay"></div>
+  <div id="popup3" class="popup">
+      <h2>معلومات عن روبوت</h2>
+      <p>روبوت ديجيتال للاستعلامات هو روبوت ذكي ومتطور صُنع وصُمم من قِبل مؤسسة ديجيتال للروبوتات. يتميز بقدرته على التنقل بين المواقع والتفاعل مع الجمهور باستخدام تقنيات الذكاء الاصطناعي ويحتوي على أجهزة استشعار لتجنب الاصطدام بالعوائق مما يجعله مثاليًا للأماكن المزدحمة. وقد تم تقديم طلب لتسجيله في موسوعة غينيس للأرقام القياسية كأسرع روبوت تم تنفيذه في 10 أيام فقط.</p>
+        <button class="btn" id="closeBtn2">اغلاق</button>
+      </div>
+
+  <script>
+      // فتح النافذة المنبثقة وتظليم الخلفية
+      document.getElementById('INFO2').addEventListener('click', function() {
+          document.getElementById('overlay3').style.display = 'block';
+          document.getElementById('popup3').style.display = 'block';
+      });
+
+     // إغلاق النافذة المنبثقة وإزالة التظليم
+document.getElementById('closeBtn2').addEventListener('click', function() {
+    document.getElementById('overlay3').style.display = 'none';
+    document.getElementById('popup3').style.display = 'none';
+});
+  </script>
+                      
+   
+
+    <!-- محتوى المنتسبين -->
+    <div class="card">
+      <div class="content">
+          <div class="back">
+              <div class="back-content">
+                <img src="img/if-advantage-teamwork-1034367_88840.png" alt="Descriptive Alt Text"style="height: 80px;width: 80px;">
+          
+                <strong>  منتسبينا </strong>
+            
+              </div>
+          </div>
+          <div class="front">
+              <div class="img">
+                  <div class="circle"></div>
+                  <div class="circle" id="right"></div>
+                  <div class="circle" id="bottom"></div>
+              </div>
+              <div class="front-content">
+                  <small class="badge">Pasta</small>
+                  <div class="description">
+                      <div class="title">
+                          <button id="openPopupBtn" class="btn">عرض </button>
+                      </div>
+                      <p class="card-footer">
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- التظليم والنافذة المنبثقة خارج البطاقة -->
+  <div id="overlay2" class="overlay2"></div>
+  <div id="popup2" class="popup2">
+    <small class="badge">المنتسبين</small>
+    <div class="container2">
+      <div class="card2">
+        <p class="title2">
+          <img src="MM/WhatsApp Image 2024-11-14 at 2.08.38 AM (1).jpeg" alt="Descriptive Alt Text" style="height: 150PX; width: 130PX;">
+        </p>
+      </div>
+      <div class="card2">
+        <p class="title2">
+          <img src="MM/WhatsApp Image 2024-11-14 at 2.08.38 AM (2).jpeg" alt="Descriptive Alt Text" style="height: 150PX; width: 130PX;">
+        </p>
+      </div>
+      <div class="card2">
+        <p class="title2">
+          <img src="MM/WhatsApp Image 2024-11-14 at 2.08.38 AM (3).jpeg" alt="Descriptive Alt Text" style="height: 150PX; width: 130PX;">
+        </p>
+      </div>
+    
+      <div class="card2">
+        <p class="title2">
+          <img src="MM/WhatsApp Image 2024-11-14 at 2.08.38 AM.jpeg" alt="Descriptive Alt Text" style="height: 150PX; width: 130PX;">
+        </p>
+      </div>
+
+      <div class="card2">
+        <p class="title2">
+          <img src="MM/WhatsApp Image 2024-11-14 at 2.08.39 AM (1).jpeg" alt="Descriptive Alt Text" style="height: 150PX; width: 130PX;">
+        </p>
+      </div>
+
+      <div class="card2">
+        <p class="title2">
+          <img src="MM/WhatsApp Image 2024-11-14 at 2.08.39 AM.jpeg" alt="Descriptive Alt Text" style="height: 150PX; width: 130PX;">
+        </p>
+      </div>
+
+      <div class="card2">
+        <p class="title2">
+          <img src="MM/WhatsApp Image 2024-11-14 at 2.08.40 AM.jpeg" alt="Descriptive Alt Text" style="height: 150PX; width: 130PX;">
+        </p>
+      </div>
+
+      <div class="card2">
+        <p class="title2">
+          <img src="MM/WhatsApp Image 2024-11-14 at 2.08.41 AM (1).jpeg" alt="Descriptive Alt Text" style="height: 150PX; width: 130PX;">
+        </p>
+      </div>
+
+      <div class="card2">
+        <p class="title2">
+          <img src="MM/WhatsApp Image 2024-11-14 at 2.08.41 AM (2).jpeg" alt="Descriptive Alt Text" style="height: 150PX; width: 130PX;">
+        </p>
+      </div>
+
+      <div class="card2">
+        <p class="title2">
+          <img src="MM/WhatsApp Image 2024-11-14 at 2.08.41 AM.jpeg" alt="Descriptive Alt Text" style="height: 150PX; width: 130PX;">
+        </p>
+      </div>
+
+      <div class="card2">
+        <p class="title2">
+          <img src="MM/WhatsApp Image 2024-11-14 at 2.08.42 AM (1).jpeg" alt="Descriptive Alt Text" style="height: 150PX; width: 130PX;">
+        </p>
+      </div>
+
+      <div class="card2">
+        <p class="title2">
+          <img src="MM/WhatsApp Image 2024-11-14 at 2.08.42 AM (2).jpeg" alt="Descriptive Alt Text" style="height: 150PX; width: 130PX;">
+        </p>
+      </div>
+
+      <div class="card2">
+        <p class="title2">
+          <img src="MM/WhatsApp Image 2024-11-14 at 2.08.42 AM (2).jpeg" alt="Descriptive Alt Text" style="height: 150PX; width: 130PX;">
+        </p>
+      </div>
+
+      <div class="card2">
+        <p class="title2">
+          <img src="MM/WhatsApp Image 2024-11-14 at 2.08.42 AM.jpeg" alt="Descriptive Alt Text" style="height: 150PX; width: 130PX;">
+        </p>
+      </div>
+    </div>
+      <button class="btn" onclick="closePopup()">إغلاق</button>
+  </div>
+
+  <script>
+      // فتح النافذة المنبثقة وتظليم الخلفية
+      document.getElementById('openPopupBtn').addEventListener('click', function() {
+          document.getElementById('overlay2').style.display = 'block';
+          document.getElementById('popup2').style.display = 'block';
+      });
+
+      // إغلاق النافذة المنبثقة وإزالة التظليم
+      function closePopup() {
+          document.getElementById('overlay2').style.display = 'none';
+          document.getElementById('popup2').style.display = 'none';
+      }
+  </script>
+
+
+    <div class="card">
+      <div class="content">
+        <div class="back">
+          <div class="back-content">
+            <img src="img/worker_meeting_coworking_remote_working_video_conference_icon_142246.png" alt="Descriptive Alt Text"style="height: 80px;width: 80px;">
+
+            <strong> الانضمام الينا </strong>
+          </div>
+        </div>
+        <div class="front">
+          <div class="img">
+            <div class="circle"></div>
+            <div class="circle" id="right"></div>
+            <div class="circle" id="bottom"></div>
+          </div>
+          <div class="front-content">
+            <small class="badge">Pasta</small>
+            <div class="description">
+              <div class="title">
+                <a href="joining.HTML" class="btn" style="text-decoration: none;">الانضمام</a>
+                              
+              </div>
+              <p class="card-footer">
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="card">
+      <div class="content">
+        <div class="back">
+          <div class="back-content">
+            <img src="img/Map_1135px_1195280_42272.png" alt="Descriptive Alt Text"style="height: 80px;width: 80px;">
+
+            <strong> موقعنا </strong>
+          </div>
+        </div>
+        <div class="front">
+          <div class="img">
+            <div class="circle"></div>
+            <div class="circle" id="right"></div>
+            <div class="circle" id="bottom"></div>
+          </div>
+          <div class="front-content">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3350.1661119546675!2d13.1944804!3d32.8937761!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13a893a72b1ca395%3A0xa59852032105ccd!2z2KrYsdin2YLZitmFINin2YTYudin2YTZhdmK2Kkg2YTZhNiq2YLZhtmK2Kk!5e0!3m2!1sar!2sly!4v1731885778422!5m2!1sar!2sly" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>            <div class="description">
+              <div class="title">
+     
+  
+
+              </div>
+              <p class="card-footer">
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="boxshadow"></div>
+      <div class="main">
+        <div class="top"></div>
+        <div class="left side"></div>
+        <div class="right side"></div>
+        <div class="title">تواصل معنا 
+        </div>
+        <div class="button-container">
+          <a class="button" href="digitalrbtorg@gmail.com" target="_blank">
+            <i class="fab fa-google" style=" height: 2px;
+            width: 5px; color: green;"></i><svg
+              class="svg twitter"
+              xmlns="https://www.facebook.com/profile.php?id=61560241674946&mibextid=LQQJ4d"
+              height="24"
+              width="24"
+              fill="green"
+              viewBox="0 0 512 512"
+            
+            >
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+            </svg>
+          </button>
+
+          <a class="button" href="https://www.facebook.com/profile.php?id=61560241674946&mibextid=LQQJ4d" target="_blank">
+            <i class="fab fa-facebook-f" style=" height: 2px; color: rgb(9, 77, 179);
+            width: 5px"></i><svg
+              class="svg twitter"
+              xmlns="https://www.facebook.com/profile.php?id=61560241674946&mibextid=LQQJ4d"
+              height="24"
+              width="24"
+              fill="green"
+              viewBox="0 0 512 512"
+            >
+            
+            </svg>
+          </button>
+          <a class="button" href="https://www.tiktok.com/@digital_robotics?_t=8rSplRw6eLo&_r=1" target="_blank">
+            <svg
+              class="svg"
+              xmlns="https://www.tiktok.com/@digital_robotics?_t=8rSplRw6eLo&_r=1"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="red"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+            <path d="M9.318 16.67a3.99 3.99 0 01-1.898-.475 3.995 3.995 0 01-2.106-3.496 3.978 3.978 0 013.027-3.883A3.983 3.983 0 0111.004 11c.14 0 .28-.005.42-.015-.006-.082-.01-.165-.01-.25V2.25h3.469a4.825 4.825 0 004.782 4.25v3.469h-2.25a4.85 4.85 0 01-4.469-2.869v5.351a3.984 3.984 0 01-3.628 4.219 4.014 4.014 0 01-.801.05zm-.1-5.726c-.586 0-1.134.223-1.545.625a2.155 2.155 0 00-.639 1.521c0 .39.114.765.33 1.088.215.322.523.576.888.732a2.186 2.186 0 001.818-.133c.263-.151.486-.358.653-.605a2.152 2.152 0 00.349-1.194v-.873a2.186 2.186 0 00-1.846-1.33c-.03-.002-.06-.003-.09-.003z" fill="#000"/>
+              <path d="M9 18c-4.51 2-5-2-7-2"></path>
+            </svg>
+          </button>
+          
+        </div>
+      </div>
+    </div>
+    
+    <!-- يمكن إضافة المزيد من البطاقات هنا -->
+  </div>
+</section>
+
+
+    <!-- Existing content -->
+
+<!--GOOGLE FONTS-->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet"> 
+</head>
+<body>
+<footer>
+<div class="footer">
+
+
+
+<div class="row">
+  Copyright © 2024 DIGITAL - All rights reserved || Designed by: MS
+</div>
+</div>
+</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

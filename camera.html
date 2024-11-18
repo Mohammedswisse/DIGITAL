@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التقاط صورة من الكاميرا</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+        #video {
+            border: 2px solid #000;
+            width: 640px;
+            height: 480px;
+        }
+        #canvas {
+            display: none;
+            border: 2px solid #000;
+            width: 640px;
+            height: 480px;
+        }
+    </style>
+</head>
+<body>
+    <h2>التقاط صورة تذكارية من الكاميرا</h2>
+    <video id="video" autoplay></video>
+    <canvas id="canvas"></canvas>
+    <button id="captureBtn">التقاط صورة</button>
+    <button id="downloadBtn" style="display: none;">تحميل الصورة</button>
+
+    <script>
+        // الوصول إلى الكاميرا
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function(stream) {
+                document.getElementById('video').srcObject = stream;
+            })
+            .catch(function(error) {
+                console.log('حدث خطأ في الوصول إلى الكاميرا: ' + error);
+            });
+
+        // التقاط الصورة عند الضغط على الزر
+        document.getElementById('captureBtn').addEventListener('click', function() {
+            var video = document.getElementById('video');
+            var canvas = document.getElementById('canvas');
+            var context = canvas.getContext('2d');
+            
+            // رسم الفيديو على اللوحة القماشية (Canvas)
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+            // إظهار الصورة الملتقطة
+            canvas.style.display = 'block';
+            document.getElementById('captureBtn').style.display = 'none';
+            document.getElementById('downloadBtn').style.display = 'inline';
+        });
+
+        // تحميل الصورة عند الضغط على زر التحميل
+        document.getElementById('downloadBtn').addEventListener('click', function() {
+            var canvas = document.getElementById('canvas');
+            var imageUrl = canvas.toDataURL('image/png');
+            var link = document.createElement('a');
+            link.href = imageUrl;
+            link.download = 'photo.png';
+            link.click();
+        });
+    </script>
+</body>
+</html>
